@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Turn an ordinary object into a contemporary artwork using International Art English.">
+    <title>let's speak international art english</title>
+
+    <style>
+        :root {
+            --ink: #161613;
+            --paper: #f2efe6;
+            --white: #fffefa;
+            --orange: #f2542d;
+            --grey: #6c6a63;
+            --line: #c9c6bb;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            color: var(--ink);
+            background: var(--paper);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        header {
+            min-height: 72px;
+            padding: 0 5vw;
+            border-bottom: 1px solid var(--ink);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .dot {
+            width: 13px;
+            height: 13px;
+            border-radius: 50%;
+            background: var(--orange);
+        }
+
+        .hero {
+            min-height: calc(100vh - 72px);
+            padding: 80px 7vw 100px;
+            display: grid;
+            grid-template-columns: minmax(0, 1.15fr) minmax(330px, 0.85fr);
+            gap: clamp(50px, 8vw, 130px);
+            align-items: center;
+        }
+
+        .eyebrow {
+            margin: 0 0 20px;
+            color: var(--orange);
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            max-width: 900px;
+            margin: 0;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(60px, 8vw, 122px);
+            font-weight: normal;
+            line-height: 0.86;
+            letter-spacing: -0.06em;
+            text-transform: lowercase;
+        }
+
+        .introduction {
+            max-width: 620px;
+            margin: 38px 0 0;
+            font-size: 18px;
+            line-height: 1.55;
+        }
+
+        form {
+            padding: 30px;
+            background: var(--white);
+            border: 1px solid var(--ink);
+            box-shadow: 10px 10px 0 var(--orange);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        textarea,
+        select {
+            width: 100%;
+            margin-bottom: 22px;
+            padding: 15px;
+            border: 1px solid var(--ink);
+            border-radius: 0;
+            color: var(--ink);
+            background: var(--white);
+            font: inherit;
+        }
+
+        textarea {
+            min-height: 145px;
+            resize: vertical;
+            line-height: 1.5;
+        }
+
+        textarea:focus,
+        select:focus {
+            outline: 3px solid var(--orange);
+            outline-offset: 2px;
+        }
+
+        button {
+            width: 100%;
+            min-height: 58px;
+            padding: 15px 18px;
+            border: 1px solid var(--ink);
+            color: white;
+            background: var(--orange);
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 0.09em;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: var(--ink);
+        }
+
+        button:disabled {
+            opacity: 0.7;
+            cursor: wait;
+        }
+
+        .form-note {
+            margin: 14px 0 0;
+            color: var(--grey);
+            font-size: 11px;
+            line-height: 1.5;
+        }
+
+        .error {
+            margin: 0 7vw 55px;
+            padding: 18px 20px;
+            color: #8b2515;
+            background: #ffe4dc;
+            border: 1px solid #8b2515;
+            line-height: 1.5;
+        }
+
+        .exhibition {
+            padding: 75px 6vw 100px;
+            background: var(--white);
+            border-top: 1px solid var(--ink);
+        }
+
+        .section-heading {
+            margin-bottom: 48px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--ink);
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: minmax(0, 1.4fr) minmax(310px, 0.6fr);
+            gap: clamp(40px, 7vw, 110px);
+            align-items: center;
+        }
+
+        figure {
+            margin: 0;
+        }
+
+        figure img {
+            display: block;
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            background: #deddd7;
+        }
+
+        figcaption {
+            margin-top: 10px;
+            color: var(--grey);
+            font-size: 11px;
+            line-height: 1.4;
+        }
+
+        .wall-label {
+            max-width: 480px;
+        }
+
+        .orange-line {
+            width: 45px;
+            height: 5px;
+            margin-bottom: 34px;
+            background: var(--orange);
+        }
+
+        .artist {
+            margin: 0;
+            font-size: 19px;
+            font-weight: bold;
+        }
+
+        .bio {
+            margin: 5px 0 30px;
+            color: var(--grey);
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        .art-title {
+            margin: 0;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(40px, 5vw, 68px);
+            font-weight: normal;
+            line-height: 0.96;
+            letter-spacing: -0.04em;
+        }
+
+        .year {
+            margin: 8px 0 30px;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 18px;
+        }
+
+        dl {
+            margin: 0 0 30px;
+        }
+
+        dl div {
+            padding: 10px 0;
+            border-top: 1px solid var(--line);
+            display: grid;
+            grid-template-columns: 95px 1fr;
+            gap: 15px;
+        }
+
+        dl div:last-child {
+            border-bottom: 1px solid var(--line);
+        }
+
+        dt {
+            color: var(--grey);
+            font-size: 10px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        dd {
+            margin: 0;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        .extended-label {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 16px;
+            line-height: 1.68;
+        }
+
+        .word-count {
+            margin-top: 18px;
+            color: var(--grey);
+            font-size: 10px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        footer {
+            padding: 30px 5vw;
+            border-top: 1px solid var(--ink);
+            color: var(--grey);
+            font-size: 11px;
+            line-height: 1.55;
+        }
+
+        footer a {
+            color: inherit;
+        }
+
+        @media (max-width: 850px) {
+            .hero,
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                min-height: 0;
+                gap: 60px;
+                padding-top: 65px;
+            }
+
+            .wall-label {
+                max-width: 680px;
+            }
+        }
+
+        @media (max-width: 520px) {
+            header span:last-child {
+                display: none;
+            }
+
+            .hero {
+                padding: 55px 22px 75px;
+            }
+
+            h1 {
+                font-size: 57px;
+            }
+
+            form {
+                padding: 22px;
+                box-shadow: 6px 6px 0 var(--orange);
+            }
+
+            .exhibition {
+                padding: 55px 22px 70px;
+            }
+
+            .section-heading {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <span class="dot"></span>
+            <span>IAE Machine</span>
+        </div>
+        <span>Department of Contextual Elevation</span>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div>
+                <p class="eyebrow">International Art English Generator</p>
+                <h1>let's speak international art english</h1>
+                <p class="introduction">
+                    Describe an ordinary object. The machine will invent its
+                    artist, write its museum wall label, and install it as a
+                    contemporary artwork.
+                </p>
+            </div>
+
+            <form method="POST" id="art-form">
+                <label for="prompt">Describe your object</label>
+                <textarea
+                    id="prompt"
+                    name="prompt"
+                    maxlength="500"
+                    required
+                    placeholder="A crumpled grocery receipt with a coffee ring and one missing corner"
+                >{{ prompt or "" }}</textarea>
+
+                <label for="setting">Curatorial setting</label>
+                <select id="setting" name="setting">
+                    <option value="white cube" {% if setting == "white cube" %}selected{% endif %}>White cube</option>
+                    <option value="museum vitrine" {% if setting == "museum vitrine" %}selected{% endif %}>Museum vitrine</option>
+                    <option value="lone plinth under a spotlight" {% if setting == "lone plinth under a spotlight" %}selected{% endif %}>Lone plinth under a spotlight</option>
+                    <option value="biennale pavilion" {% if setting == "biennale pavilion" %}selected{% endif %}>Biennale pavilion</option>
+                </select>
+
+                <button type="submit" id="submit-button">Elevate this object ↗</button>
+                <p class="form-note">Image generation may take approximately one minute.</p>
+            </form>
+        </section>
+
+        {% if error %}
+            <div class="error" role="alert">{{ error }}</div>
+        {% endif %}
+
+        {% if label and image_url %}
+            <section class="exhibition" id="exhibition">
+                <div class="section-heading">
+                    <span>Now on view</span>
+                    <span>Department Collection</span>
+                </div>
+
+                <div class="gallery">
+                    <figure>
+                        <img src="{{ image_url }}" alt="Installation view of {{ label['title'] }} by {{ label['artist'] }}">
+                        <figcaption>
+                            Installation view: <em>{{ label["title"] }}</em>, {{ label["year"] }}.
+                            {{ setting | capitalize }}.
+                        </figcaption>
+                    </figure>
+
+                    <article class="wall-label">
+                        <div class="orange-line"></div>
+                        <p class="artist">{{ label["artist"] }}</p>
+                        <p class="bio">{{ label["bio"] }}</p>
+                        <h2 class="art-title"><em>{{ label["title"] }}</em></h2>
+                        <p class="year">{{ label["year"] }}</p>
+
+                        <dl>
+                            <div>
+                                <dt>Medium</dt>
+                                <dd>{{ label["medium"] }}</dd>
+                            </div>
+                            <div>
+                                <dt>Dimensions</dt>
+                                <dd>{{ label["dimensions"] }}</dd>
+                            </div>
+                            <div>
+                                <dt>Provenance</dt>
+                                <dd>{{ label["provenance"] }}</dd>
+                            </div>
+                            <div>
+                                <dt>Credit line</dt>
+                                <dd>{{ label["credit_line"] }}</dd>
+                            </div>
+                        </dl>
+
+                        <p class="extended-label">{{ label["extended_label"] }}</p>
+                        <p class="word-count">{{ label["word_count"] }} words of institutional certainty</p>
+                    </article>
+                </div>
+            </section>
+        {% endif %}
+    </main>
+
+    <footer>
+        Inspired by Alix Rule and David Levine's
+        <a href="https://tc3.canopycanopycanopy.com/series/international_art_english/contents/international_art_english" target="_blank" rel="noreferrer">“International Art English”</a>.
+        All generated artists, theorists, books, provenances, and credit lines are fictional.
+    </footer>
+
+    <script>
+        const form = document.querySelector("#art-form");
+        const button = document.querySelector("#submit-button");
+
+        form.addEventListener("submit", () => {
+            button.disabled = true;
+            button.textContent = "Writing label and installing artwork…";
+        });
+
+        if (document.querySelector("#exhibition")) {
+            document.querySelector("#exhibition").scrollIntoView({ behavior: "smooth" });
+        }
+    </script>
+</body>
+</html>
+
